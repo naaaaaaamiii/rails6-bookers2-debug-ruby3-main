@@ -11,6 +11,7 @@ class SearchesController < ApplicationController
         @books = Book.looks(params[:search], params[:word])
       end
     
+    redirect_to 
     end
 
 end
