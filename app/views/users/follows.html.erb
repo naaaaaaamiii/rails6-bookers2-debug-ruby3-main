@@ -11,11 +11,7 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td>
-            <%= link_to user_path(user) do %>
-              <%= image_tag user.get_profile_image(50,50) %>
-            <% end %>
-          </td>
+          <td><%= image_tag user.get_profile_image, size:'50x50' %></td>
           <td><%= user.name %></td>
           <td>
             <%= link_to follows_user_path(user) do %>
@@ -27,6 +23,7 @@
               <h6>フォロワー<%= user.followeds.count %></h6>
             <% end %>
           </td>
+          <td><%= link_to 'Show', user %></td>
         </tr>
       <% end %>
     </tbody>
