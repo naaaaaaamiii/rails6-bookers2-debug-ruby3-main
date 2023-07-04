@@ -20,8 +20,8 @@ class User < ApplicationRecord
   validates :name, uniqueness: true
   validates :introduction, length: { maximum: 50 }
 
-  def get_profile_image
-    (profile_image.attached?) ? profile_image : 'no_image.jpg'
+  def get_profile_image(*size)
+    (profile_image.attached?)? profile_image: 'no_image.jpg'
   end
 
   def follow(user_id)
