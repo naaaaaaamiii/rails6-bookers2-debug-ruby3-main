@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @book = Book.new
     @books = @user.books
-    #フォロー
+    #フォロー機能
     @following_users = @user.following_users
     @follower_users = @user.follower_users
     # 投稿数の比較
@@ -36,12 +36,12 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   def follows
     user = User.find(params[:id])
     @users = user.following_users
   end
-  
+
   def followers
     user = User.find(params[:id])
     @user = user.follower_users
