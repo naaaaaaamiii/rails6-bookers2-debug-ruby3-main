@@ -1,13 +1,14 @@
-<canvas id="myLineChart"></canvas>
+ <canvas id="myLineChart"></canvas>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>
     $(document).on('turbolinks:load', function() {
-      
       var ctx = document.getElementById("myLineChart");
       var myLineChart = new Chart(ctx, {
         type: 'line',
         data: {
           labels: ['6日前', '5日前', '4日前', '3日前', '2日前', '1日前', '今日'],
-          datasets: [{
+          datasets: [
+            {
               label: '投稿した本の数',
               data: [
                 <%= books.created_6day_ago.count %>,
@@ -43,5 +44,3 @@
       });
     });
   </script>
-  
-  
