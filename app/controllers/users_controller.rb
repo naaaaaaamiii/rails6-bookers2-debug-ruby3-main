@@ -44,13 +44,13 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @user = user.follower_users
   end
-  
+
 
   def search
     @user = User.find(params[:user_id])
-    @books = @user.books 
+    @books = @user.books
     @book = Book.new
-    
+
     if params[:created_at] == ""
       @search_book = "日付を選択してください"
     else
